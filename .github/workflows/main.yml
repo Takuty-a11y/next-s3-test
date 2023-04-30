@@ -14,7 +14,7 @@ jobs:
         run: npm install
 
       - name: Build
-        run: npm run build # React ビルド
+        run: npm run build # Nextjsビルド
 
       - name: Deploy # S3にデプロイ
         env:
