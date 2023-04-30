@@ -16,6 +16,9 @@ jobs:
       - name: Build
         run: npm run build # Nextjsビルド
 
+      - name: Export Next.js app
+        run: npm run export
+
       - name: Deploy # S3にデプロイ
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
