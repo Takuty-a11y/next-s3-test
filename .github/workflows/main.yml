@@ -15,9 +15,6 @@ jobs:
 
       - name: Build
         run: npm run build # Nextjsビルド
-        artifacts:
-          paths:
-            - build/
 
       - name: Export Next.js app
         run: npm run export
@@ -27,4 +24,4 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_KEY_ID }}
         run: # S3のbucket-for-deploying-react-projectバケットにデプロイ
-          aws s3 cp --recursive --region ap-northeast-1 build s3://bucket-for-deploying-next-project
+          aws s3 sync --recursive ap-northeast-1 ./out s3://bucket-for-deploying-next-project --delete
