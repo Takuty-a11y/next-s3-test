@@ -12,7 +12,7 @@ export default function Home() {
   };
   const handleApi = async () => {
     await axios
-      .get("https://350wb1bsvc.execute-api.ap-northeast-3.amazonaws.com/dev")
+      .get("https://pp1s7ryry1.execute-api.ap-northeast-1.amazonaws.com/dev")
       .then((res) => {
         console.log(res);
       });
