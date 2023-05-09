@@ -2,10 +2,12 @@ import { PageLayout } from "@/components/layout";
 import { Inter } from "next/font/google";
 import { useRouter } from "next/router";
 import axios from "axios";
+import { useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const [text, setText] = useState("Initial");
   const router = useRouter();
   const handleClick = () => {
     router.push("/test");
@@ -15,6 +17,7 @@ export default function Home() {
       .get("https://pp1s7ryry1.execute-api.ap-northeast-1.amazonaws.com/dev")
       .then((res) => {
         console.log(res);
+        setText(res.data);
       });
   };
 
@@ -35,6 +38,7 @@ export default function Home() {
       >
         APIテスト
       </button>
+      <p>{text}</p>
     </PageLayout>
   );
 }
