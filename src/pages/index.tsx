@@ -41,7 +41,7 @@ export default function Home() {
         className="bg-white rounded-md p-3 text-gray-600 border shadow my-3"
         onClick={handleClick}
       >
-        テストページへ
+        テストページへ遷移します！
       </button>
       <button
         type="button"
